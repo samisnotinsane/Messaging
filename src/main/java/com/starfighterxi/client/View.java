@@ -26,7 +26,7 @@ public class View extends Application {
     public void start(Stage stage) throws Exception{
         Scene scene = new Scene(new Group());
         stage.setTitle("Messaging");
-        showInfo("Git changes pushed successfully!");
+
         // --- Top menu bar
         MenuBar menuBar = new MenuBar();
 
