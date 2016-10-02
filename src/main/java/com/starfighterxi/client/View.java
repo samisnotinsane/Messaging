@@ -26,7 +26,7 @@ public class View extends Application {
     public void start(Stage stage) throws Exception{
         Scene scene = new Scene(new Group());
         stage.setTitle("Messaging");
-
+        showInfo("Git changes pushed successfully!");
         // --- Top menu bar
         MenuBar menuBar = new MenuBar();
 
@@ -116,6 +116,14 @@ public class View extends Application {
     public static void showError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public static void showInfo(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
