@@ -1,4 +1,4 @@
-package main.java.com.starfighterxi.scratch;
+package com.starfighterxi.messaging.scratch;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

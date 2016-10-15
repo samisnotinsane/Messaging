@@ -1,4 +1,4 @@
-package main.java.com.starfighterxi.server;
+package com.starfighterxi.messaging.server;
 
 /**
  * Created by sameen on 02/10/2016.
