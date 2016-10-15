@@ -20,7 +20,8 @@ public class View extends Application {
     TextArea txtViewMsg = null;
     TextArea txtSendMsg = null;
     Button btnSend = null;
-    public static String contactName = "CONTACT_NAME_NOT_INIT";
+    private static String contactName = "CONTACT_NAME_NOT_INIT";
+    private static String chatMessages = "";
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -74,7 +75,10 @@ public class View extends Application {
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 System.out.println("[DEBUG]: Handing send button");
-                showError("This feature is not yet available!");
+                sendMessage(txtSendMsg.getText());
+                updateMessageViewer();
+                clearSendMessageBox();
+//                showError("This feature is not yet available!");
             }
         });
 
@@ -111,6 +115,20 @@ public class View extends Application {
         ((Group) scene.getRoot()).getChildren().addAll(vbox);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void clearSendMessageBox() {
+        txtSendMsg.clear();
+    }
+
+    private void updateMessageViewer() {
+        txtViewMsg.setText(chatMessages);
+    }
+
+    public static void sendMessage(String message) {
+        if(message.equals("")||message.equals(null))
+            return;
+        chatMessages += message + "\n";
     }
 
     public static void showError(String message) {

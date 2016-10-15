@@ -5,6 +5,9 @@
 # Maven
 target/*
 
+#Visual Paradigm
+vpp
+
 *.class
 
 # Mobile Tools for Java (J2ME)
