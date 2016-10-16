@@ -1,6 +1,6 @@
 package com.starfighterxi.messaging.client;
 
-import javafx.application.Application;
+import com.starfighterxi.messaging.server.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -15,17 +15,24 @@ import javafx.stage.Stage;
 /**
  * Created by sameen on 02/10/2016.
  */
-public class View extends Application {
+public class ChatView {
     TextArea txtViewMsg = null;
     TextArea txtSendMsg = null;
     Button btnSend = null;
     private static String contactName = "CONTACT_NAME_NOT_INIT";
     private static String chatMessages = "";
+    private User recipient;
 
-    @Override
-    public void start(Stage stage) throws Exception{
+    public ChatView(User recipient) {
+        this.recipient = recipient;
+        showChatDialog();
+    }
+
+
+    public void showChatDialog() {
+        Stage stage = new Stage();
         Scene scene = new Scene(new Group());
-        stage.setTitle("Messaging");
+        stage.setTitle("Chat - " + recipient.getName());
 
         // --- Top menu bar
         MenuBar menuBar = new MenuBar();
@@ -40,7 +47,7 @@ public class View extends Application {
         });
         menuFile.getItems().add(mnuExit);
         Menu menuEdit = new Menu("Edit");
-        Menu menuView = new Menu("View");
+        Menu menuView = new Menu("ChatView");
         Menu menuHelp = new Menu("Help");
         MenuItem mnuAbout = new MenuItem("About");
         mnuAbout.setOnAction(new EventHandler<ActionEvent>() {
@@ -144,10 +151,6 @@ public class View extends Application {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }

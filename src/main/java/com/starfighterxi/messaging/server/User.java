@@ -10,8 +10,8 @@ public class User {
     private String id;
     private String name;
 
-    public void setId(String id) {
-        this.id = id;
+    public User() {
+        this.id = Integer.toString(Utils.generateRandomId());
     }
 
     public void setName(String name) {
@@ -19,7 +19,6 @@ public class User {
     }
 
     public String getId() {
-
         return id;
     }
 

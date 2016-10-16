@@ -8,5 +8,21 @@ import java.util.List;
 public class Server {
     private List<Message> inTray;
     private List<Message> outTray;
+    private List<User> onlineUsers;
 
+    public void addOnlineUser(User user) {
+        onlineUsers.add(user);
+    }
+
+    public List<Message> getInTray() {
+        return inTray;
+    }
+
+    public List<Message> getOutTray() {
+        return outTray;
+    }
+
+    public List<User> getOnlineUsers() {
+        return onlineUsers;
+    }
 }
