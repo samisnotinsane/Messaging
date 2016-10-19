@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.starfighterxi.messaging.client.fxml.ChatListController">
+   <children>
+      <HBox prefHeight="13.0" prefWidth="277.0" spacing="5.0">
+         <children>
+            <Label text="Status:" />
+            <Label fx:id="lblStatus" text="Offline" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="8.0" prefWidth="277.0" spacing="5.0">
+         <children>
+            <Label text="Username:" />
+            <Label fx:id="lblUsername" text="NOT_INIT" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="23.0" prefWidth="277.0" spacing="5.0">
+         <children>
+            <Label text="Online users:">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="lblOnlineUserCount" text="0" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <ListView fx:id="listOnlineUsers" prefHeight="437.0" prefWidth="277.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+   </children>
+</VBox>

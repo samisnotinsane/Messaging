@@ -2,6 +2,7 @@ package com.starfighterxi.messaging.client;
 
 import com.starfighterxi.messaging.server.Server;
 import com.starfighterxi.messaging.server.User;
+import com.starfighterxi.messaging.server.Utils;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class Communicator {
         try {
             server.addOnlineUser(user);
         } catch (Exception e) {
+            Utils.print("Could not make user online!");
             e.printStackTrace();
             return false;
         }

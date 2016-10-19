@@ -11,4 +11,9 @@ public class Utils {
         Random random = new Random();
         return random.nextInt(Integer.MAX_VALUE) + 1;
     }
+
+    public static void print(String message) {
+        System.out.println("[DEBUG] - " + message);
+    }
+
 }

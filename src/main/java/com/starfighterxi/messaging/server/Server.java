@@ -1,5 +1,6 @@
 package com.starfighterxi.messaging.server;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,8 @@ public class Server {
     private List<User> onlineUsers;
 
     public void addOnlineUser(User user) {
+        if (onlineUsers == null)
+            onlineUsers = new ArrayList<>();
         onlineUsers.add(user);
     }
 
