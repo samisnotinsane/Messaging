@@ -11,6 +11,12 @@ public class Message {
     private User owner;
     private User receiver;
 
+    public Message(User owner, User receiver, String message) {
+        this.owner = owner;
+        this.receiver = receiver;
+        this.message = message;
+    }
+
     public String getMessage() {
         return message;
     }
