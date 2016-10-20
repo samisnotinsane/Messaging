@@ -11,7 +11,7 @@ public class Server {
     private List<Message> outTray;
     private List<User> onlineUsers;
 
-    public void addOnlineUser(User user) {
+    private void addOnlineUser(User user) {
         if (onlineUsers == null)
             onlineUsers = new ArrayList<>();
         onlineUsers.add(user);
@@ -27,5 +27,15 @@ public class Server {
 
     public List<User> getOnlineUsers() {
         return onlineUsers;
+    }
+
+    public boolean registerUser(User user) throws UnableToRegisterUserException {
+        try {
+            addOnlineUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

@@ -11,7 +11,7 @@ public class User {
     private String name;
 
     public User() {
-        this.id = Integer.toString(Utils.generateRandomId());
+        this.id = Integer.toString(Utils.generateRandomInt());
     }
 
     public void setName(String name) {

@@ -22,7 +22,7 @@ public class Communicator {
 
     public boolean login(User user) {
         try {
-            server.addOnlineUser(user);
+            server.registerUser(user);
         } catch (Exception e) {
             Utils.print("Could not make user online!");
             e.printStackTrace();
