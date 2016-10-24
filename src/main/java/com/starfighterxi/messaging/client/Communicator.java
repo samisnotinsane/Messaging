@@ -4,6 +4,7 @@ import com.starfighterxi.messaging.server.Server;
 import com.starfighterxi.messaging.server.User;
 import com.starfighterxi.messaging.server.Utils;
 
+import java.net.Socket;
 import java.util.List;
 
 /**
@@ -12,11 +13,20 @@ import java.util.List;
  * Communicates with Server.
  */
 public class Communicator {
-    private Server server;
+    private static Socket clientSocket;
+
+    private static final String SERVER_NAME = "ALEC";
+    private static final int PORT = 1025;
 
 
-    public Communicator() {
-        this.server = new Server();
+    public static boolean connect() {
+        try {
+            clientSocket = new Socket(SERVER_NAME, PORT);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 
@@ -46,5 +56,15 @@ public class Communicator {
             }
         }
         return onlineUsers;
+    }
+
+
+
+    public static int getPortNo() {
+        return PORT_NO;
+    }
+
+    public static String getServerName() {
+        return SERVER_NAME;
     }
 }

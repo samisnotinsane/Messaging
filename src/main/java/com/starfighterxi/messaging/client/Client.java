@@ -12,9 +12,10 @@ import java.util.List;
  * Holds a User who sends Messages to a Postman.
  */
 public class Client {
-    private Server serverInstance;
     private User user;
     private User receiver;
+
+
 
     public Client(User user) {
         this.user = user;
@@ -25,9 +26,21 @@ public class Client {
     }
 
     public boolean register(User user) throws UnableToRegisterUserException {
-        if (serverInstance == null)
-            this.serverInstance = new Server();
-        return serverInstance.registerUser(user);
+        if( Communicator.connect() ) {
+            // perform registration actions ...
+
+            return Communicator.registerUser(user);
+        } else {
+            throw new UnableToRegisterUserException();
+        }
+
+
+
+
+    }
+
+    private void connect() {
+
     }
 
     public List<User> getOnlineUsers() throws ServerCommunicationException {
