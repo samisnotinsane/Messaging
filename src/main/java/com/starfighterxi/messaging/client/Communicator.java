@@ -32,7 +32,7 @@ public class Communicator {
 
     public boolean login(User user) {
         try {
-            server.registerUser(user);
+//            server.registerUser(user);
         } catch (Exception e) {
             Utils.print("Could not make user online!");
             e.printStackTrace();
@@ -44,7 +44,7 @@ public class Communicator {
     public List<User> getOnlineUsers() {
         List<User> onlineUsers = null;
         try {
-            onlineUsers =  server.getOnlineUsers();
+//            onlineUsers =  server.getOnlineUsers();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class Communicator {
 
 
     public static int getPortNo() {
-        return PORT_NO;
+        return PORT;
     }
 
     public static String getServerName() {

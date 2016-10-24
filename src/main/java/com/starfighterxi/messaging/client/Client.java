@@ -29,14 +29,14 @@ public class Client {
         if( Communicator.connect() ) {
             // perform registration actions ...
 
-            return Communicator.registerUser(user);
+//            return Communicator.registerUser(user);
         } else {
             throw new UnableToRegisterUserException();
         }
 
 
 
-
+        return false;
     }
 
     private void connect() {
@@ -46,7 +46,7 @@ public class Client {
     public List<User> getOnlineUsers() throws ServerCommunicationException {
         List<User> onlineUsers = null;
         try {
-            onlineUsers =  serverInstance.getOnlineUsers();
+//            onlineUsers =  serverInstance.getOnlineUsers();
         }catch (Exception e) {
             e.printStackTrace();
         }
